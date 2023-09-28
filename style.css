@@ -5,34 +5,33 @@
     --primary:#ffda0a;
     --secondary:rgb(239, 15, 255)0e;
     --darkblue:#000754;
+    --nav-bg:#ffff;
+    --nav:#ffff;
     --lightblue:#00aaff;
+    --background:linear-gradient(131deg, #2f2f2f 0%, #000000 100%);
 }
 
-
 body{
-    margin:0px 0px 0px 0px;
-    height: 1080px;
-    
+    margin: 0px;
+    padding: 0px;
+
 }
 
 /* ---------nav css satrted----------- */
 nav{
-    top:0px;
-    position: absolute;
-    z-index: 10;
-    background: linear-gradient(131deg, #8300ff 0%, #9300aa 100%);
-    background-blend-mode: normal;
     position: sticky;
+    top: 0px;
+    z-index: 10;
 }
-nav-bar{
+nav nav-bar{
     display: flex;
     flex-direction: row;
     padding: 0px 20px 0px 20px;
-    flex-wrap: wrap;
-    color: var(--card-title);
     font-weight: bolder;
     align-items: center;
     border-radius: 15px;
+    flex-wrap: wrap;
+    color: var(--card-title);
     margin:0px 10px 0px 10px ;
     box-shadow: 0px 4px 8px 0px rgb(30, 0, 74);
     background-color: rgb(18, 0, 60);
@@ -47,6 +46,12 @@ nav-bar{
     margin-right: 20px;
     list-style-type: none;
 }
+.tabs li:hover{
+    color: var(--lightblue);
+}
+.share:hover{
+    color: var(--lightblue);
+}
 
 .logo img{
     width: 50px;
@@ -58,27 +63,39 @@ nav-bar{
 /* -----------nav css ended ------- */
 
 /* ------------container css started------- */
-
+.body-container{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: var(--background);
+    background-blend-mode: normal;
+}
 .container{
-    /* display: block; */
+    display: block;
     top:0px;
+    z-index: 1;
+    padding-top: 50px;
     position: relative;
     height:fit-content;
     padding-left: 50px;
     padding-right: 50px;
-    background: linear-gradient(131deg, #8300ff 0%, #9300aa 100%);
+    background: var(--background);
     background-blend-mode: normal;
 
 }
 .detail-container{
-        position: relative;
         display: flex;
-        
         height: 35rem;
         align-items: center;
         flex-direction: row;
         justify-content: space-around;
 
+}
+.detail-container .card-view h1{
+    color: var(--card-title);
+}
+.detail-container .card-view p{
+    color: var(--card-desc);
 }
 .detail-container .profile-img{
     width: 300px;
@@ -87,12 +104,7 @@ nav-bar{
     box-shadow: 0px 4px 10px 4px rgb(49, 49, 49);
     
 }
-.detail-container .card-view h1{
-    color: var(--card-title);
-}
-.detail-container .card-view p{
-    color: var(--card-desc);
-}
+
 
 .bio {
     position: relative;
@@ -123,18 +135,32 @@ nav-bar{
 }
 .footer{
     display: flex;
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 50px;
     flex-direction: row;
+    height: 100%;
     justify-content: space-evenly;
-    background: linear-gradient(131deg, #8300ff 0%, #9300aa 100%);
+    background: var(--background);
     background-blend-mode: normal;
     font-size: 20px;
     color: var(--card-title);
 
 }
+.Contact-me{
+    width: 20rem;
+    text-align:center;
+}
+.Contact-me .contact-me-icon a{
+    color: var(--primary);
+    
+}
+.Contact-me .contact-me-icon a :hover{
+    color: var(--lightblue);
+    
+}
 .Contact-me .contact-me-icon i{
-    margin-right: 10px;
+    margin-right: 20px;
+    font-size: 40px;
 
 }
 
@@ -144,7 +170,6 @@ nav-bar{
 
 @media screen and (max-width: 955px){
 
-    /* nav bar */
 
 
     /* container */
@@ -171,8 +196,8 @@ nav-bar{
         
         
     }
-    .footer .personal-details{
-        
+    .footer p{
+        text-align: center;
     }
     .footer .Contact-me{
         display: flex;
